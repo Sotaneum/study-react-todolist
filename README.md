@@ -21,3 +21,9 @@ yarn start
 ```bash
 yarn build
 ```
+
+## Optimization
+
+- before
+
+  ![before](./assets/before.png)
