@@ -1,17 +1,19 @@
 import React, { useReducer, useRef, useCallback } from 'react';
-import TodoTemplate from './components/TodoTemplate';
-import TodoInsert from './components/TodoInsert';
-import TodoList from './components/TodoList';
+import { TodoList, TodoInsert, TodoTemplate } from './components';
 
-function createBulkTodos(size = 2500) {
+const DUMMY_SIZE = 2500;
+
+function createBulkTodos() {
   const array = [];
-  for (let i = 0; i < size; i++) {
+
+  for (let i = 0; i < DUMMY_SIZE; i++) {
     array.push({
       id: i,
       text: `할 일 ${i}`,
       checked: false,
     });
   }
+
   return array;
 }
 
@@ -36,10 +38,8 @@ function todoReducer(todos, action) {
 }
 
 const App = () => {
-  const size = 2500;
   const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos);
-
-  const nextId = useRef(size + 1);
+  const nextId = useRef(DUMMY_SIZE + 1);
 
   const onInsert = useCallback((text) => {
     const todo = {
@@ -47,14 +47,14 @@ const App = () => {
       text,
       checked: false,
     };
+
     dispatch({ type: 'INSERT', todo });
+
     nextId.current += 1;
   }, []);
-
   const onRemove = useCallback((id) => {
     dispatch({ type: 'REMOVE', id });
   }, []);
-
   const onToggle = useCallback((id) => {
     dispatch({ type: 'TOGGLE', id });
   }, []);

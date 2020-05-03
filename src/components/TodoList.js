@@ -7,7 +7,7 @@ const WIDTH = 512;
 const HEIGHT = 513;
 const ROW_HEIGHT = 57;
 
-const TodoList = ({ todos, onRemove, onToggle }) => {
+const TodoList = ({ todos = [], onRemove = () => {}, onToggle = () => {} }) => {
   const rowRenderer = useCallback(
     ({ index, key, style }) => {
       const todo = todos[index];
@@ -23,6 +23,7 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
     },
     [onRemove, onToggle, todos],
   );
+
   const rowCount = todos.length;
   const style = { outline: 'none' };
 
