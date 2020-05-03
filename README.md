@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-yarn add node-sass classnames react-icons
+yarn
 ```
 
 ## Run (development mode)
@@ -36,7 +36,7 @@ yarn build
 
   ![useReducer](./assets/useReducer.png)
 
-### 결론 (개인 생각)
+### Component Optimization 결론 (개인 생각)
 
 - 기존 코드 대부분을 변경해야하는 단점이 있지만 전반적으로 코드가 깔끔하게 정리된 느낌을 주는 useReducer 방식이 더 깔끔한 것 같다. 이미 useState로 구현되어 있는 경우 실질적으로 성능 차이가 없기 때문에 구지 useReducer 형태로 변경할 이유는 없을 것 같다.
 
