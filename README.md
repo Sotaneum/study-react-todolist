@@ -49,3 +49,15 @@ yarn build
 - before
 
   ![useReducer_before](./assets/useReducer.png)
+
+- virtualized 적용
+
+  ![virtualized](./assets/useVirtualized.png)
+
+### Rendering Optimization 결론 (개인 생각)
+
+- 2500개 데이터를 전부 출력하기 보다는 화면 출력될 크기를 지정하고 그 크기만큼만 보여주는 `react-virtualized`의 `List`컴포넌트를 통해 최적화 작업을 진행했습니다.
+
+- 보여주는 개수가 적어 화면을 갱신해야하는 요소가 줄어들면서 Rendering 뿐만 아니라 Scripting 작업도 줄어드는 것을 볼 수 있었습니다.
+
+- 이 부분에 대해서 여러 프로젝트에 적용할 수 있을 것이라 판단했습니다.
