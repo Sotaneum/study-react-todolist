@@ -1,14 +1,20 @@
 import React, { memo } from 'react';
 import {
-  MdCheckBoxOutlineBlank,
   MdCheckBox,
   MdRemoveCircleOutline,
+  MdCheckBoxOutlineBlank,
 } from 'react-icons/md';
 import cn from 'classnames';
 import './TodoListItem.scss';
 
-const TodoListItem = ({ todo, style, onRemove, onToggle }) => {
+const TodoListItem = ({
+  todo,
+  style = {},
+  onRemove = () => {},
+  onToggle = () => {},
+}) => {
   const { id, text, checked } = todo;
+
   return (
     <div className="TodoListItem-virtualized" style={style}>
       <div className="TodoListItem">
