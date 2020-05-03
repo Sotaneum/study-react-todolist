@@ -28,6 +28,6 @@ yarn build
 
   ![before](./assets/before.png)
 
-- useState
+- memo + useState 함수형 업데이트 적용
 
   ![useState](./assets/useState.png)
