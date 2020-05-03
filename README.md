@@ -43,3 +43,9 @@ yarn build
 - 이번 프로젝트의 경우 memo만 적용할 경우 큰 성능적인 차이를 느낄 수 없었습니다.
 
   ![onlyMemo](./assets/only_memo.png)
+
+## Rendering Optimization
+
+- before
+
+  ![useReducer_before](./assets/useReducer.png)
