@@ -3,21 +3,23 @@ import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 
-const App = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: '리',
-      checked: true,
-    },
-    {
-      id: 2,
-      text: '리',
-      checked: true,
-    },
-  ]);
+function createBulkTodos(size = 2500) {
+  const array = [];
+  for (let i = 0; i < size; i++) {
+    array.push({
+      id: i,
+      text: `할 일 ${i}`,
+      checked: false,
+    });
+  }
+  return array;
+}
 
-  const nextId = useRef(3);
+const App = () => {
+  const size = 2500;
+  const [todos, setTodos] = useState(createBulkTodos(size));
+
+  const nextId = useRef(size + 1);
 
   const onInsert = useCallback(
     (text) => {
